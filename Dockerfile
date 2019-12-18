@@ -113,7 +113,7 @@ RUN apt-get update \
           \nloadRData="0" \
           \nsaveAction="0"' \
           > /home/rstudio/.rstudio/monitored/user-settings/user-settings \
-  && chown -R rstudio:rstudio /home/rstudio/.rstudio
+  && chown -R rstudio:rstudio /home/rstudio/.rstudio \
   && install2.r --error \
     bs4Dash \
     cowplot \
