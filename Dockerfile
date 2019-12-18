@@ -117,7 +117,7 @@ RUN apt-get update \
           > /home/rstudio/.rstudio/monitored/user-settings/user-settings \
   && chown -R rstudio:rstudio /home/rstudio/.rstudio \
   && if [ -z "$MRAN_SNAPSHOT" ]; then MRAN_URL="https://mran.microsoft.com/snapshot/2019-12-18"; else MRAN_URL="https://mran.microsoft.com/snapshot/${$MRAN_SNAPSHOT}"; fi \
-  && install2.r --error --deps TRUE --repo $MRAN_SNAPSHOT \
+  && install2.r --error --deps TRUE --repo $MRAN_URL \
     bs4Dash \
     cowplot \
     classInt \
