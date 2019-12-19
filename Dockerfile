@@ -36,8 +36,11 @@ RUN apt-get update \
     classInt \
     deldir \
     expint \
+    geoR \
+    geosphere \
     gstat \
     hdf5r \
+    janitor \ 
     leaflet \
     leaflet.extras \
     lidR \
@@ -49,6 +52,7 @@ RUN apt-get update \
     metR \
     ncdf4 \
     openxlsx \
+    pander \ 
     patchwork \
     plotly \
     proj4 \
@@ -63,6 +67,7 @@ RUN apt-get update \
     shinydashboard \
     shinythemes \
     shinyWidgets \
+    skimr \
     sp \
     spacetime \
     spatstat \
@@ -70,8 +75,7 @@ RUN apt-get update \
     spdep \
     tmap \
     units \
-    geoR \
-    geosphere \
+    visdat \ 
     ## from bioconductor
     && R -e "BiocManager::install('rhdf5')"
     
