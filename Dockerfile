@@ -1,8 +1,6 @@
 FROM rocker/shiny-verse:3.6.1
 MAINTAINER "Andrew Barker" andbarker@gmail.com
 
-ARG MRAN_SNAPSHOT
-#ENV MRAN_SNAPSHOT=2019-12-19
 ARG RSTUDIO_VERSION
 #ENV RSTUDIO_VERSION=${RSTUDIO_VERSION:-1.2.1335}
 ARG S6_VERSION
@@ -116,9 +114,7 @@ RUN apt-get update \
           \nsaveAction="0"' \
           > /home/rstudio/.rstudio/monitored/user-settings/user-settings \
   && chown -R rstudio:rstudio /home/rstudio/.rstudio \
-#  && if [ -z "$MRAN_SNAPSHOT" ]; then MRAN_URL="https://mran.microsoft.com/snapshot/2019-12-18"; else MRAN_URL="https://mran.microsoft.com/snapshot/${$MRAN_SNAPSHOT}"; fi \
-  && install2.r --error --deps TRUE \
-#  --repo $MRAN_URL \
+  && install2.r --error \
     bs4Dash \
     cowplot \
     classInt \
